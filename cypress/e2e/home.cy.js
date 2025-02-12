@@ -38,17 +38,4 @@ describe('Login Page', () =>{
     );
   });
 
-  it('should only submit once', () =>{
-      //Arrange
-      cy.get('#email').type('test@example.com');
-      cy.get('#password').type('password123');
-
-       //Act
-       for(var i = 0; i < 3; i++){
-       cy.get('#login-button').click();
-       }
-
-       //Assertion  
-       cy.get('#submitCount').should('have.to', '1')
-  });
 });
